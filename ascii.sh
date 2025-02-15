@@ -1,24 +1,27 @@
-# Hide the cursor
+#!/bin/bash
 tput civis
+oldstty=$(stty -g)
+stty -icanon -echo
+trap 'stty "$oldstty"; tput cnorm; exit' INT TERM EXIT
 
-# Ensure the cursor is restored
-trap "tput cnorm; exit" INT TERM EXIT
+# Green-themed colors (Matrix style)
+colors=("\033[38;5;22m" "\033[38;5;28m" "\033[38;5;34m" "\033[38;5;40m" "\033[38;5;46m")
+reset="\033[0m"
+cols=$(tput cols)
 
-# Loop indefinitely to update the screen.
 while true; do
-  clear
-  rows=$(tput lines)
-  cols=$(tput cols)
-  for ((i = 0; i < rows; i++)); do
-    line=""
-    for ((j = 0; j < cols; j++)); do
-      # Generate a random ASCII code between 33 (!) and 126 (~)
-      rand=$(( RANDOM % 94 + 33 ))
-      # Append the corresponding character to the line.
-      line+=$(printf "\\$(printf '%03o' "$rand")")
-    done
-    echo "$line"
+  line=""
+  for ((j=0; j<cols; j++)); do
+    color=${colors[RANDOM % ${#colors[@]}]}
+    rand=$(( RANDOM % 94 + 33 ))
+    char=$(printf "\\$(printf '%03o' "$rand")")
+    line+="${color}${char}${reset}"
   done
-  # Adjust the sleep duration to control the refresh rate.
+  echo -e "$line"
+  read -rsn1 -t 0 key
+  [[ "$key" == $'\e' ]] && break
   sleep 0.1
 done
+
+stty "$oldstty"
+tput cnorm
