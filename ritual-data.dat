@@ -1,0 +1,41 @@
+# Day 1
+COIN=1,0,1,1,0,1,0,1
+DICE=7,11,4,8,6,9,3,12
+RANDOM=45,67,23,89,12,34,78,56
+ROULETTE=black,red,black,yellow,black,red,black,red
+
+# Day 2
+COIN=0,0,1,0,1,1,1,0
+DICE=5,10,8,3,7,11,6,9
+RANDOM=88,34,67,12,90,45,23,71
+ROULETTE=red,red,black,black,yellow,red,black,black
+
+# Day 3
+COIN=1,1,0,1,0,0,1,1
+DICE=12,4,8,6,9,3,11,7
+RANDOM=56,78,34,89,23,67,12,45
+ROULETTE=black,yellow,red,black,red,black,red,black
+
+# Day 4
+COIN=0,1,1,0,1,0,1,0
+DICE=8,11,3,9,6,12,4,7
+RANDOM=34,67,89,23,45,78,12,90
+ROULETTE=red,black,yellow,red,black,red,black,red
+
+# Day 5
+COIN=1,0,0,1,1,0,1,1
+DICE=6,9,12,4,7,11,3,8
+RANDOM=78,23,45,90,67,12,34,56
+ROULETTE=black,red,black,red,yellow,black,red,black
+
+# Day 6
+COIN=0,1,1,1,0,1,0,0
+DICE=10,5,8,11,3,9,6,12
+RANDOM=45,89,23,67,12,78,90,34
+ROULETTE=red,black,red,yellow,black,red,black,red
+
+# Day 7
+COIN=1,1,0,1,1,0,1,0
+DICE=7,12,4,8,11,3,9,6
+RANDOM=67,23,89,45,78,12,90,56
+ROULETTE=black,red,yellow,black,red,black,red,black
